@@ -6,9 +6,12 @@ def main():
     print(im.format, im.size, im.mode)
 
     pixelMatrix = get_pixel_matrix(im)
+    """
+    for testing pixel matrix
     for row in pixelMatrix:
         for pixel in row:
             print(pixel)
+    """
 
 def get_pixel_matrix(img):
     pixels = list(img.getdata())
