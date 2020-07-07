@@ -5,10 +5,14 @@ Sandbox for testing projects / new languages / etc
 Following the official Microsoft Docs for creating a basic razor pages web application.
 
 ## ASCII Image Converter
-Project to take an image and convert it into ASCII.
+Small project to load an image and print it to the terminal in ASCII characters.
 
 Based on: https://robertheaton.com/2018/12/08/programming-projects-for-advanced-beginners/
 
-Known issues: Sizing the image properly in a way that makes it both runnable and viewable as output can be difficult.
+Known issues: Image sizing (better understanding how to use thumbnail to reduce the image size while still getting a viewable output).
 
-Future Additioins: Colour, Additional brightness options, Invert image option
+Goals:
+  - [x] Display test image properly
+  - [ ] Add brightness calculation options
+  - [ ] Add a way to invert the ASCII image for clarity
+  - [ ] Add a method of automatically adding high color points back into the ASCII (i.e. anything above a certain RGB value is considered strong enough of a color to be stored)
