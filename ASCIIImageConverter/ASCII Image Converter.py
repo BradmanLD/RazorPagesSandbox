@@ -18,9 +18,10 @@ def main():
     ASCIIMatrix = convert_brightness_to_ASCII(brightnessMatrix, ASCII)
     for row in ASCIIMatrix:
         line = [p+p+p for p in row]
-        print(line)
+        print("".join(line))
 
 def get_pixel_matrix(img):
+    img.thumbnail((1000, 200))
     pixels = list(img.getdata())
     return [pixels[i:i+img.width] for i in range(0, len(pixels), img.width)]
 
