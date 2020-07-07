@@ -1,7 +1,5 @@
 from PIL import Image
 import numpy as np
-ASCII = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
-
 
 def main():
     im = Image.open("smallTestImage.png")
@@ -15,6 +13,12 @@ def main():
             print(pixel)
     """
     brightnessMatrix = convert_rgb_to_brightness(pixelMatrix)
+
+    ASCII = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+    ASCIIMatrix = convert_brightness_to_ASCII(brightnessMatrix, ASCII)
+    for row in ASCIIMatrix:
+        line = [p+p+p for p in row]
+        print(line)
 
 def get_pixel_matrix(img):
     pixels = list(img.getdata())
@@ -31,5 +35,18 @@ def convert_rgb_to_brightness(pixelMatrix):
             brightnessRow.append(brightness)
         brightnessMatrix.append(brightnessRow)
     return brightnessMatrix
+
+def convert_brightness_to_ASCII(brightnessMatrix, ASCIIChars):
+    ASCIIMatrix = []
+    brightnessMax = 255
+
+    for row in brightnessMatrix:
+        ASCIIRow = []
+        for pixel in row:
+            ASCIIRow.append(ASCIIChars[int((pixel/brightnessMax * len(ASCIIChars)) - 1)])
+        ASCIIMatrix.append(ASCIIRow)
+    return ASCIIMatrix
+
+
 
 main()
