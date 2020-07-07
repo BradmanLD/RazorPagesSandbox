@@ -1,5 +1,7 @@
 from PIL import Image
 import numpy as np
+ASCII = "`^\",:;Il!i~+_-?][}{1)(|\\/tfjrxnuvczXYUJCLQ0OZmwqpdbkhao*#MW&8%B@$"
+
 
 def main():
     im = Image.open("smallTestImage.png")
@@ -25,7 +27,7 @@ def convert_rgb_to_brightness(pixelMatrix):
     for row in pixelMatrix:
         brightnessRow = []
         for pixel in row:
-            brightness = (pixel[0] + pixel[1] + pixel[2] / 3.0)
+            brightness = (pixel[0] + pixel[1] + pixel[2]) / 3.0
             brightnessRow.append(brightness)
         brightnessMatrix.append(brightnessRow)
     return brightnessMatrix
