@@ -16,3 +16,11 @@ Goals:
   - [ ] Add brightness calculation options
   - [ ] Add a way to invert the ASCII image for clarity
   - [ ] Add a method of automatically adding high color points back into the ASCII (i.e. anything above a certain RGB value is considered strong enough of a color to be stored)
+
+## PDF Converter
+Takes a file, reads it and creates a pdf with the content of the file.
+TBD:
+  - [x] Basic framework
+  - [ ] Handle formatting (headings, font, font changes, etc)
+  - [ ] Handle non-txt files as input
+  - [ ] Get user input for the file path
